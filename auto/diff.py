@@ -26,7 +26,7 @@ def diff():
     server_tag = decode_tag(server_config)
     setup_vars = import_vars()
     if setup_vars is not None:
-        change_history, change_live, change_alarm = False
+        change_history, change_live, change_alarm = False, False, False
         local_history = sdh()
         local_live = sdl()
         local_alarm = aiv()
