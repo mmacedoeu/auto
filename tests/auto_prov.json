@@ -1,0 +1,62 @@
+{
+	"monitoring_tag": "identificador_grafana",
+	"cameras": [
+		{
+		   "id": 123,
+		   "networkAddress": "172.0.0.1",
+		   "streamName": "00001_1",
+		   "services":[
+		   		{
+		   			"type": "LIVE",
+		   			"enabled": false
+		   			
+		   		},
+		   		{
+		   			"type": "HISTORY",
+		   			"enabled": true
+		   			
+		   		}
+		   ] 
+		   		 
+		},
+		{
+		   "id": 456,
+		   "networkAddress": "172.0.0.2",
+		   "streamName": "00001_1",
+		   "services":[
+		   		{
+		   			"type": "LIVE",
+		   			"enabled": true
+		   			
+		   		},
+		   		{
+		   			"type": "HISTORY",
+		   			"enabled": false
+		   			
+		   		}
+		   ] 
+		}
+	],
+	"alarms": [
+		{
+			"id": 14,
+			"type": "PEREMITER",
+			"enabled": true,
+   			"parameters": [
+   				{
+   				   "gpio": 13
+				   }
+				]
+		},
+		{
+			"id": 13,
+			"type": "MOVIMENT",
+			"enabled": true,
+   			"parameters": [
+   				{
+   				   "cameraId": 4566
+				   }
+				]
+		}
+	]
+}

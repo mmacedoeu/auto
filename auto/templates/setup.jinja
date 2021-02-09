@@ -1,0 +1,12 @@
+# Base config
+stream_name = {{ name }}
+# Stream Description
+stream_desc = {{ tag }}
+
+# Cameras installed
+{% for cam in cams %}
+{{ cam['streamName']}} = rtsp://admin:guardep0rn0s@{{cam['networkAddress']}}:554/ch01/0
+{% endfor %}
+
+livestream={{ live_list |join(', ')}}
+history={{ history_list |join(', ')}}

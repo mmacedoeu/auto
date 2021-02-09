@@ -1,0 +1,15 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/home/macedo/anaconda3/envs/gabriel/bin/python",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "python.formatting.provider": "black"
+}
