@@ -50,7 +50,7 @@
 		},
 		{
 			"id": 13,
-			"type": "MOVIMENT",
+			"type": "CAMERA",
 			"enabled": true,
    			"parameters": [
    				{

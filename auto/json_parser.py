@@ -40,12 +40,12 @@ def decode_alert(js):
             result.append(camera)
     return result
 
-def decode_moviment(js):
+def decode_movement(js):
     cameras = js["cameras"]
     alarms = js["alarms"]
     movements = []
     for alarm in alarms:
-        if alarm["type"] == "MOVIMENT" and alarm["enabled"]:
+        if alarm["type"] == "CAMERA" and alarm["enabled"]:
             id = get_param(alarm["parameters"],"cameraId")
             if id:
                 movements.append(id)

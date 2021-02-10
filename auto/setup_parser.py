@@ -91,6 +91,15 @@ def decode_live():
         decoded[h] = vars[h]
     return decoded    
 
+def decode_movement():
+    vars = import_vars()
+    movement = vars['movement']
+    movement = [x.strip() for x in movement.split(',')]
+    decoded = {}
+    for h in movement:
+        decoded[h] = vars[h]
+    return decoded       
+
 if __name__=='__main__':
     print(import_vars())
 
