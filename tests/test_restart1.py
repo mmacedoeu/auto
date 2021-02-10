@@ -15,8 +15,7 @@ class Test1(unittest.TestCase):
         container = client.containers.run("nginxdemos/hello:plain-text",
                                       detach=True)
         container.reload()
-        name = container.name
-        restart(name)
+        restart('hello')
         container.reload()
         container.stop()       
         assert True
