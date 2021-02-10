@@ -3,6 +3,7 @@ MAINTAINER diego@gabriel.com.br
 
 ADD . /autoprov
 WORKDIR /autoprov
+RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 RUN mkdir -p /home/autoprov && \
 mkdir -p /.apps/common/
