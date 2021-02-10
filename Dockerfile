@@ -10,4 +10,5 @@ mkdir -p /.apps/common/
 ENV HOME /
 
 VOLUME ["/.apps/common/", "/var/run/docker.sock"]
-ENTRYPOINT ["python3", "/autoprov/auto/Main.py"]
+ENV PYTHONPATH "${PYTHONPATH}:/home/autoprov"
+ENTRYPOINT ["python3", "-m", "auto.Main"]
