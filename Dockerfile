@@ -5,11 +5,11 @@ ADD . /autoprov
 WORKDIR /autoprov
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-RUN mkdir -p /home/autoprov && \
+RUN mkdir -p /autoprov && \
 mkdir -p /.apps/common/
 
 ENV HOME /
 
 VOLUME ["/.apps/common/", "/var/run/docker.sock"]
-ENV PYTHONPATH "${PYTHONPATH}:/home/autoprov"
+ENV PYTHONPATH "${PYTHONPATH}:/autoprov"
 ENTRYPOINT ["python3", "-m", "auto.Main"]
