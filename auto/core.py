@@ -5,7 +5,7 @@ from auto.restart import restart
 default_history_name_container = "history"
 default_livestream_name_container = "livestream"
 default_alarm_name_container = "alarm"
-
+default_movement_name_container = "movement"
 
 def run():
     (
@@ -23,6 +23,7 @@ def run():
             restart(default_history_name_container)
         if change_live:
             restart(default_livestream_name_container)
+        restart(default_movement_name_container)
     # if change_alarm:
     #     generate_alarm_conf(server_alarm)
     #     restart(default_alarm_name_container)
