@@ -1,4 +1,5 @@
-FROM python:3.7.9-slim-buster
+FROM registry.gitlab.com/gabriel-technologia/board-video-history:base
+#FROM python:3.7.9-slim-buster
 MAINTAINER diego@gabriel.com.br
 
 ADD . /autoprov
