@@ -7,8 +7,8 @@ def is_service_enabled(services, type):
 
 def get_param(params, type):
     for param in params:
-        if param[type]:
-            return param[type]
+        if param == type:
+            return params[type]
     return None
 
 def decode(js, type):
