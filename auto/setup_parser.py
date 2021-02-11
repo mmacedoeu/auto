@@ -75,29 +75,32 @@ def insert_vars(**kwargs):
 
 def decode_history():
     vars = import_vars()
-    history = vars['history']
-    history = [x.strip() for x in history.split(',')]
     decoded = {}
-    for h in history:
-        decoded[h] = vars[h]
+    if 'history' in vars:
+        history = vars['history']
+        history = [x.strip() for x in history.split(',')]
+        for h in history:
+            decoded[h] = vars[h]
     return decoded
 
 def decode_live():
     vars = import_vars()
-    livestream = vars['livestream']
-    livestream = [x.strip() for x in livestream.split(',')]
     decoded = {}
-    for h in livestream:
-        decoded[h] = vars[h]
+    if 'livestream' in vars:
+        livestream = vars['livestream']
+        livestream = [x.strip() for x in livestream.split(',')]
+        for h in livestream:
+            decoded[h] = vars[h]
     return decoded    
 
 def decode_movement():
     vars = import_vars()
-    movement = vars['movement']
-    movement = [x.strip() for x in movement.split(',')]
     decoded = {}
-    for h in movement:
-        decoded[h] = vars[h]
+    if 'movement' in vars:
+        movement = vars['movement']
+        movement = [x.strip() for x in movement.split(',')]
+        for h in movement:
+            decoded[h] = vars[h]
     return decoded       
 
 if __name__=='__main__':

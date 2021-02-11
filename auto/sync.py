@@ -24,6 +24,9 @@ def get_endpoint_host():
 def get_endpoint_port():
     return os.getenv('ENDPOINT_PORT', default_port)
 
+def get_default_serial():
+    return os.getenv('SERIAL', '100000000204e8e1')
+
 def getserial():
   # Extract serial from cpuinfo file
   cpuserial = None
@@ -44,8 +47,8 @@ def get_device():
         if serial is not None:
             return serial
     except:
-        return "A1B2"
-    return "A1B2"
+        return get_default_serial()
+    return get_default_serial()
 
 def urlbuilder(url, params):
     r = f"{url}"
@@ -80,10 +83,26 @@ async def process():
         # print(output)
         return output
 
+def mock_response():
+    response = None
+    path = os.getenv('API_MOCK_PATH')
+    if path:
+        try:
+            f = open(path,'r')
+            response = json.loads(f.read())
+            f.close()
+        except:
+            response = None        
+    return response
+
 def sync():
-    assert sys.version_info >= (3, 7), "Script requires Python 3.7+."
-    loop = asyncio.get_event_loop()
-    return loop.run_until_complete(loop.create_task(process()))
+    mock = mock_response()
+    if mock:
+        return mock
+    else:    
+        assert sys.version_info >= (3, 7), "Script requires Python 3.7+."
+        loop = asyncio.get_event_loop()
+        return loop.run_until_complete(loop.create_task(process()))
     
 if __name__ == "__main__":
     sync()
