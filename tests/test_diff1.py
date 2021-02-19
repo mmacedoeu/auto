@@ -1,12 +1,15 @@
 import unittest
 import os
 import pathlib
+import tempfile
 from auto.diff import diff
 
 class Test1(unittest.TestCase):
     def test_diff(self):
         base = pathlib.Path(__file__).parent.absolute()
-        os.environ["SETUP_PATH"] = f'{base}/setup2.conf'
+        setup_file = tempfile.NamedTemporaryFile(prefix="setup_")
+        print(setup_file.name)
+        os.environ["SETUP_PATH"] = setup_file.name
         os.environ["API_MOCK_PATH"] = f'{base}/auto_prov2.json'
         (
             change_history,
